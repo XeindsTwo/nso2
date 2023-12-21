@@ -1,16 +1,16 @@
 .start {
-  margin-top: 90px;
-  @media (max-width: 1540px) {
-    margin-top: 70px;
-  }
+  margin-top: 70px;
   @media (max-width: 1420px) {
     margin-top: 55px;
+  }
+
+  &__nav {
+    margin-bottom: 60px;
   }
 
   &__links {
     @include flex-column(15);
     align-items: flex-end;
-    margin-bottom: 80px;
     @media screen and (min-width: 1366px) and (max-height: 850px) {
 
     }
@@ -23,13 +23,7 @@
     position: relative;
     color: inherit;
     display: flex;
-    font-size: 32px;
-    @media (max-width: 1470px) {
-      font-size: 30px;
-    }
-    @media (max-width: 1400px) {
-      font-size: 28px;
-    }
+    font-size: 26px;
 
     &:focus {
       opacity: .5;
@@ -82,7 +76,7 @@
     font-family: $condens;
     font-size: 66px;
     text-transform: uppercase;
-    margin-bottom: 10px;
+    margin-bottom: 40px;
   }
 
   &__arrow {
@@ -109,23 +103,13 @@
     span {
       margin-top: -7px;
       margin-left: -11px;
-      font-size: 360px;
+      font-size: 330px;
       line-height: 1;
       font-family: $condens;
       color: transparent;
       -webkit-text-stroke-width: 1px;
       -webkit-text-stroke-color: $white;
       text-transform: uppercase;
-      @media (max-width: 1540px) {
-        font-size: 350px;
-        margin-left: -16px;
-      }
-      @media (max-width: 1420px) {
-        font-size: 342px;
-      }
-      @media (max-width: 1320px) {
-        font-size: 335px;
-      }
     }
   }
 
@@ -134,31 +118,15 @@
     object-fit: contain;
     position: relative;
     z-index: 20;
-    @media (max-width: 1540px) {
-      width: 730px;
-      height: auto;
-    }
-    @media (max-width: 1420px) {
-      width: 700px;
-    }
-    @media (max-width: 1360px) {
-      width: 660px;
-    }
-    @media (max-width: 1320px) {
-      width: 640px;
-    }
   }
 
   &__contacts {
-    margin-top: -60px;
+    margin-top: -35px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     margin-bottom: 205px;
-    @media (max-width: 1420px) {
-      margin-top: -50px;
-    }
 
     &-title {
       text-transform: uppercase;
