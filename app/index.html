@@ -8,7 +8,7 @@
     <meta name="description"
           content="Limited Club здесь высокие показатели — не цель, а стандарт">
     <meta http-equiv="content-type" content="public, max-age=3600">
-    <title>Main | NSO2 Network</title>
+    <title>NSO2 Network</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100;8..144,400&display=swap" rel="stylesheet">
@@ -24,7 +24,7 @@
             <nav class="start__nav">
                 <ul class="start__links">
                     <li>
-                        <a class="start__link" href="#">register</a>
+                        <button class="start__link" type="button" id="buttonOpenRegister">register</button>
                     </li>
                     <li>
                         <a class="start__link" href="#">log in</a>
@@ -67,5 +67,25 @@
         </div>
     </section>
 </main>
+<div class="modal">
+    <div class="container">
+        <div class="modal__inner">
+            <div class="modal__sidebar">
+                <img class="modal__img" src="images/start.svg" alt="" width="183" height="83">
+                <span class="modal__title">Registration</span>
+            </div>
+            <form class="modal__form" action="" method="post">
+                <button class="modal__btn" type="button" id="buttonSubmitRegister">
+                    <span>(1)</span>
+                    sign up now
+                </button>
+            </form>
+        </div>
+        <button class="modal__btn modal__close" type="button" id="buttonCloseRegister">
+            <span>(2)</span>
+            back to main page
+        </button>
+    </div>
+</div>
 <video class="video" src="images/video.mp4" autoplay muted loop></video>
 <script src="js/main.min.js" type="module" defer></script>

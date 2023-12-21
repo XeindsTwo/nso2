@@ -1,5 +1,5 @@
 @include('components/_head.html', {
-title: 'Main | NSO2 Network'
+title: 'NSO2 Network'
 })
 
 <main>
@@ -8,7 +8,7 @@ title: 'Main | NSO2 Network'
             <nav class="start__nav">
                 <ul class="start__links">
                     <li>
-                        <a class="start__link" href="#">register</a>
+                        <button class="start__link" type="button" id="buttonOpenRegister">register</button>
                     </li>
                     <li>
                         <a class="start__link" href="#">log in</a>
@@ -51,5 +51,25 @@ title: 'Main | NSO2 Network'
         </div>
     </section>
 </main>
+<div class="modal">
+    <div class="container">
+        <div class="modal__inner">
+            <div class="modal__sidebar">
+                <img class="modal__img" src="images/start.svg" alt="" width="183" height="83">
+                <span class="modal__title">Registration</span>
+            </div>
+            <form class="modal__form" action="" method="post">
+                <button class="modal__btn" type="button" id="buttonSubmitRegister">
+                    <span>(1)</span>
+                    sign up now
+                </button>
+            </form>
+        </div>
+        <button class="modal__btn modal__close" type="button" id="buttonCloseRegister">
+            <span>(2)</span>
+            back to main page
+        </button>
+    </div>
+</div>
 <video class="video" src="images/video.mp4" autoplay muted loop></video>
 <script src="js/main.min.js" type="module" defer></script>

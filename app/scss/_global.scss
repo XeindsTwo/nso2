@@ -7,11 +7,12 @@
   background-color: #242424;
   position: relative;
   overflow-x: hidden;
-  @include r($lg) {
-    font-size: 16px;
+  @media (max-width: 1400px) {
+    font-size: 30px;
   }
-  @include r($phone) {
-    font-size: 14px;
+
+  &--active {
+    overflow: hidden;
   }
 }
 
