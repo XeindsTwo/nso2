@@ -21,6 +21,7 @@
     display: flex;
     gap: 80px;
     align-items: center;
+    justify-content: center;
   }
 
   &__sidebar {
@@ -49,10 +50,28 @@
     -webkit-text-stroke: 1px $white;
   }
 
+  &__form {
+    max-width: 510px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__list {
+    @include flex-column(35);
+    margin-bottom: 70px;
+  }
+
+  &__input {
+    border-bottom: 1px solid $white;
+    display: flex;
+  }
+
   &__btn {
     line-height: 1;
     transition: color .4s, opacity .4s;
     color: inherit;
+    font-size: 26px;
 
     span {
       color: $accent;
@@ -82,5 +101,9 @@
     font-weight: 100;
     display: block;
     margin: 0 auto 80px;
+  }
+
+  &__register {
+    margin: 0 auto;
   }
 }

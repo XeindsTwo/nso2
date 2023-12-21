@@ -51,7 +51,7 @@ title: 'NSO2 Network'
         </div>
     </section>
 </main>
-<div class="modal">
+<div class="modal modal--active">
     <div class="container">
         <div class="modal__inner">
             <div class="modal__sidebar">
@@ -59,7 +59,35 @@ title: 'NSO2 Network'
                 <span class="modal__title">Registration</span>
             </div>
             <form class="modal__form" action="" method="post">
-                <button class="modal__btn" type="button" id="buttonSubmitRegister">
+                <ul class="modal__list">
+                    <li class="modal__item">
+                        <span class="error error--active">Mail does not meet requirements</span>
+                        <div class="modal__input">
+                            <label class="label" for="email">Email:</label>
+                            <input class="input" type="text" required id="email" name="email">
+                        </div>
+                    </li>
+                    <li class="modal__item">
+                        <span class="error error--active">Name does not meet requirements</span>
+                        <div class="modal__input">
+                            <label class="label" for="password">Password:</label>
+                            <input class="input" type="password" required id="password" name="password">
+                        </div>
+                    </li>
+                    <li class="modal__item">
+                        <div class="modal__input">
+                            <label class="label" for="passwordRepeat">Repeat Password:</label>
+                            <input class="input" type="password" required id="passwordRepeat" name="passwordRepeat">
+                        </div>
+                    </li>
+                    <li class="modal__item">
+                        <div class="modal__input">
+                            <label class="label" for="telegram">Tag Telegram:</label>
+                            <input class="input" type="text" required id="telegram" name="telegram">
+                        </div>
+                    </li>
+                </ul>
+                <button class="modal__btn modal__register" type="submit" id="buttonSubmitRegister">
                     <span>(1)</span>
                     sign up now
                 </button>
