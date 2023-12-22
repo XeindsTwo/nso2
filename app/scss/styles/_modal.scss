@@ -63,10 +63,9 @@
     font-size: 254px;
     line-height: 74%;
     color: transparent;
-    -webkit-text-stroke: 3px $white;
+    -webkit-text-stroke: 2px $white;
     @media (max-height: 780px) {
       font-size: 224px;
-      -webkit-text-stroke: 2px $white;
     }
     @media (max-height: 700px) {
       font-size: 210px;
