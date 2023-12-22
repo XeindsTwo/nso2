@@ -6,6 +6,8 @@
 
   &__nav {
     margin-bottom: 60px;
+    position: relative;
+    z-index: 23;
   }
 
   &__links {
