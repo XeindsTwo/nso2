@@ -3,6 +3,14 @@ const modal = document.querySelector('.modal');
 const btnRegister = document.getElementById('buttonOpenRegister');
 const btnCloseRegister = document.getElementById('buttonCloseRegister');
 
+window.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape') {
+        body.classList.remove('body--active');
+        modal.classList.remove('modal--active');
+        modal.scrollTop = 0;
+    }
+});
+
 btnRegister.addEventListener('click', function () {
     body.classList.add('body--active');
     modal.classList.add('modal--active');
