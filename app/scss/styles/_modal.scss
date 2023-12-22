@@ -35,8 +35,11 @@
     max-width: 285px;
     width: 100%;
     text-align: right;
-    @media (max-height: 890px) {
-      max-width: 450px;
+    @media (max-height: 780px) {
+      max-width: 250px;
+    }
+    @media (max-height: 700px) {
+      max-width: 220px;
     }
   }
 
@@ -45,6 +48,9 @@
     z-index: 30;
     @include objectCoverBg;
     margin-left: -75px;
+    @media (max-height: 780px) {
+      margin-left: -60px;
+    }
   }
 
   &__title {
@@ -58,9 +64,17 @@
     line-height: 74%;
     color: transparent;
     -webkit-text-stroke: 3px $white;
+    @media (max-height: 780px) {
+      font-size: 224px;
+      -webkit-text-stroke: 2px $white;
+    }
+    @media (max-height: 700px) {
+      font-size: 210px;
+    }
   }
 
   &__form {
+    margin-top: 75px;
     max-width: 510px;
     width: 100%;
     display: flex;
@@ -70,12 +84,18 @@
   &__list {
     @include flex-column(35);
     margin-bottom: 70px;
+    @media (max-height: 760px) {
+      margin-bottom: 45px;
+    }
   }
 
   &__input {
     border-bottom: 1px solid $white;
     padding-bottom: 10px;
     display: flex;
+    @media (max-height: 750px) {
+      padding-bottom: 6px;
+    }
   }
 
   &__btn {
@@ -115,9 +135,15 @@
     @media (max-height: 930px) {
       margin-bottom: 0;
     }
+    @media (max-height: 710px) {
+      font-size: 22px;
+    }
   }
 
   &__register {
     margin: 0 auto;
+    @media (max-height: 730px) {
+      font-size: 24px;
+    }
   }
 }

@@ -53,6 +53,9 @@
   max-width: max-content;
   width: 100%;
   margin-right: 6px;
+  @media (max-height: 815px) {
+    font-size: 36px;
+  }
 }
 
 .input {
