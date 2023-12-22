@@ -11,10 +11,10 @@ window.addEventListener('keydown', function (event) {
     }
 });
 
-/*btnRegister.addEventListener('click', function () {
+btnRegister.addEventListener('click', function () {
     body.classList.add('body--active');
     modal.classList.add('modal--active');
-});*/
+});
 
 btnCloseRegister.addEventListener('click', function () {
     body.classList.remove('body--active');
