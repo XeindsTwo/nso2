@@ -11,6 +11,28 @@
   &--active {
     overflow: hidden;
   }
+
+  &::before {
+    @include pseudo;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(#000, .5);
+    transition: opacity .6s;
+    z-index: -1;
+    opacity: 0;
+  }
+
+  &--complete {
+    overflow: hidden;
+
+    &::before {
+      z-index: 45;
+      opacity: 1;
+    }
+  }
 }
 
 .container {

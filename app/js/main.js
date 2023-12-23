@@ -4,10 +4,24 @@ const btnRegister = document.getElementById('buttonOpenRegister');
 const btnCloseRegister = document.getElementById('buttonCloseRegister');
 
 window.addEventListener('keydown', function (event) {
+    const body = document.body;
+    const modalComplete = document.querySelector('.modal__complete');
+    const modal = document.querySelector('.modal');
+
     if (event.key === 'Escape') {
-        body.classList.remove('body--active');
-        modal.classList.remove('modal--active');
-        modal.scrollTop = 0;
+        if (modalComplete.classList.contains('modal__complete--active')) {
+            modalComplete.classList.remove('modal__complete--active');
+            body.classList.remove('body--complete');
+            setTimeout(() => {
+                body.classList.remove('body--active');
+                modal.classList.remove('modal--active');
+                modal.scrollTop = 0;
+            }, 600);
+        } else if (modal.classList.contains('modal--active')) {
+            body.classList.remove('body--active');
+            modal.classList.remove('modal--active');
+            modal.scrollTop = 0;
+        }
     }
 });
 
@@ -128,6 +142,40 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
+    const closeModal = () => {
+        const body = document.body;
+        const modal = document.getElementById('modalComplete');
+        body.classList.remove('body--complete');
+        modal.classList.remove('modal__complete--active');
+        modal.style.transform = 'translate(-50%, 20%)';
+        modal.style.zIndex = '0';
+        modal.style.opacity = '0';
+        modal.style.transition = 'all .8s ease-in-out';
+        modal.style.pointerEvents = 'none';
+
+        setTimeout(() => {
+            modal.style.opacity = '';
+            modal.style.transform = '';
+            modal.style.pointerEvents = '';
+            modal.style.zIndex = '';
+            modal.style.transition = '';
+        }, 700);
+    };
+
+    const showModalComplete = () => {
+        const body = document.body;
+        const modal = document.getElementById('modalComplete');
+        body.classList.add('body--complete');
+        modal.classList.add('modal__complete--active');
+    };
+
+    document.addEventListener('click', (event) => {
+        const modal = document.getElementById('modalComplete');
+        if (modal.classList.contains('modal__complete--active') && !modal.contains(event.target)) {
+            closeModal();
+        }
+    });
+
     form.addEventListener('submit', (event) => {
         validateEmail();
         validatePassword();
@@ -135,6 +183,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (!emailValid || !passwordValid || !telegramValid) {
             event.preventDefault();
+        } else {
+            event.preventDefault();
+            showModalComplete();
         }
     });
+
+    const modalCloseCompleteIcon = document.getElementById('modalCloseCompleteIcon');
+    const modalCloseComplete = document.getElementById('modalCloseComplete');
+
+    modalCloseCompleteIcon.addEventListener('click', closeModal);
+    modalCloseComplete.addEventListener('click', closeModal);
 });

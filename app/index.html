@@ -74,7 +74,8 @@
                     <img class="modal__img" src="images/start.svg" alt="" width="183" height="83">
                     <span class="modal__title">Registration</span>
                 </div>
-                <form class="modal__form" action="" method="post">
+                <form class="modal__form" method="post">
+                    <span class="modal__error">Error 503</span>
                     <ul class="modal__list">
                         <li class="modal__item">
                             <span class="error" id="emailError">Mail does not meet requirements</span>
@@ -82,7 +83,7 @@
                             <span class="error" id="emailErrorLength">Maximum number of characters - 80</span>
                             <div class="modal__input">
                                 <label class="label" for="email">Email:</label>
-                                <input class="input" type="text" required id="email" name="email">
+                                <input class="input" type="text" value="test@mail.ru" required id="email" name="email">
                             </div>
                         </li>
                         <li class="modal__item">
@@ -93,14 +94,16 @@
                             <span class="error" id="passwordErrorMax">Max. number of characters - 60</span>
                             <div class="modal__input">
                                 <label class="label" for="password">Password:</label>
-                                <input class="input" type="password" required id="password" name="password">
+                                <input class="input" type="password" value="test@mail.ru" required id="password"
+                                       name="password">
                             </div>
                         </li>
                         <li class="modal__item">
                             <span class="error" id="passwordRepeatError">Password mismatch</span>
                             <div class="modal__input">
                                 <label class="label" for="passwordRepeat">Repeat Password:</label>
-                                <input class="input" type="password" required id="passwordRepeat" name="passwordRepeat">
+                                <input class="input" type="password" value="test@mail.ru" required id="passwordRepeat"
+                                       name="passwordRepeat">
                             </div>
                         </li>
                         <li class="modal__item">
@@ -108,7 +111,8 @@
                             <span class="error" id="telegramErrorMin">Min. number of characters - 5</span>
                             <div class="modal__input">
                                 <label class="label" for="telegram">Tag Telegram:</label>
-                                <input class="input" type="text" required maxlength="32" id="telegram" name="telegram">
+                                <input class="input" type="text" value="value" required maxlength="32" id="telegram"
+                                       name="telegram">
                             </div>
                         </li>
                     </ul>
@@ -116,6 +120,10 @@
                         <span>(1)</span>
                         sign up now
                     </button>
+                    <p class="modal__error-info">
+                        Wow, something seems to have gone wrong!
+                        Please contact the manager <a href="#">@govnoed</a>
+                    </p>
                 </form>
             </div>
             <button class="modal__btn modal__close" type="button" id="buttonCloseRegister">
@@ -124,6 +132,13 @@
             </button>
         </div>
     </div>
+</div>
+<div class="modal__complete" id="modalComplete">
+    <button class="modal__close-complete" id="modalCloseCompleteIcon" type="button"></button>
+    <p class="modal__info">
+        Ваши данные были успешно отправлены для последующей регистрации. Ожидайте ответа
+    </p>
+    <button class="modal__btn-close" id="modalCloseComplete" type="button">Закрыть</button>
 </div>
 <video class="video" src="images/video.mp4" autoplay muted loop></video>
 <script src="js/main.min.js" type="module" defer></script>
