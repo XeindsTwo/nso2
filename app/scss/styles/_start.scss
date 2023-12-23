@@ -13,6 +13,11 @@
   &__links {
     @include flex-column(10);
     align-items: flex-end;
+    @include r($lg) {
+      flex-direction: row;
+      justify-content: center;
+      gap: 40px;
+    }
   }
 
   &__link {
@@ -56,11 +61,11 @@
   &__content {
     position: relative;
     margin-top: -70px;
-    @media (max-height: 830px) {
-      margin-top: -110px;
+    @include r($lg) {
+      margin-top: 100px;
     }
-    @media (max-height: 770px) {
-      margin-top: -135px;
+    @media (max-width: 650px) {
+      margin-top: 80px;
     }
   }
 
@@ -76,6 +81,17 @@
     font-size: 24px;
     margin-bottom: 14px;
     color: $accent;
+    @include r($tablet) {
+      font-size: 22px;
+      margin-bottom: 5px;
+    }
+    @include r($sm) {
+      font-size: 20px;
+    }
+    @include r($phone) {
+      margin-bottom: 2px;
+      font-size: 18px;
+    }
   }
 
   &__subtitle {
@@ -83,6 +99,15 @@
     font-size: 66px;
     text-transform: uppercase;
     margin-bottom: 45px;
+    @include r($tablet) {
+      font-size: 60px;
+    }
+    @include r($sm) {
+      margin-bottom: 35px;
+    }
+    @include r($phone) {
+      font-size: 56px;
+    }
   }
 
   &__arrow {
@@ -102,13 +127,40 @@
       transform: rotate(370deg);
     }
     @media screen and (max-width: 1400px) and (max-height: 805px) {
-      transform: rotate(380deg);
+      transform: rotate(347deg);
+    }
+    @include r($desktop) {
+      width: 165px;
+      top: -30px;
+    }
+    @include r($lg) {
+      width: 150px;
+      transform: scaleX(-1) rotate(340deg);
+      top: -80px;
+      right: 21%;
+    }
+    @media (max-width: 900px) {
+      right: 17%;
+    }
+    @media (max-width: 830px) {
+      right: 15%;
+    }
+    @include r($tablet) {
+      right: 14%;
+    }
+    @media (max-width: 650px) {
+      display: none;
     }
   }
 
   &__title {
     display: flex;
     justify-content: center;
+    @include r($lg) {
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 25px;
+    }
 
     span {
       margin-top: -7px;
@@ -123,11 +175,54 @@
       @media (-webkit-max-device-pixel-ratio: 1), (max-resolution: 191dpi) {
         -webkit-text-stroke-width: 2.5px;
       }
-      @media (max-height: 770px) {
-        font-size: 295px;
+      @media (-webkit-max-device-pixel-ratio: 1), (max-resolution: 191dpi), (max-width: 650px) {
+        -webkit-text-stroke-width: 2px;
       }
-      @media (max-height: 730px) {
-        font-size: 270px;
+      @media (-webkit-max-device-pixel-ratio: 1), (max-resolution: 191dpi), (max-width: 468px) {
+        -webkit-text-stroke-width: 1.5px;
+      }
+      @media (max-width: 1240px) {
+        font-size: 298px;
+      }
+      @media (max-width: 1140px) {
+        font-size: 280px;
+      }
+      @media (max-width: 1070px) {
+        font-size: 260px;
+      }
+      @media (max-height: 770px) {
+        font-size: 260px;
+      }
+      @include r($lg) {
+        margin-top: -100px;
+      }
+      @media (max-width: 830px) {
+        margin-top: -90px;
+        font-size: 245px;
+      }
+      @include r($tablet) {
+        margin-top: -80px;
+        font-size: 230px;
+      }
+      @media (max-width: 650px) {
+        font-size: 220px;
+      }
+      @include r($sm) {
+        margin-top: -70px;
+        font-size: 210px;
+      }
+      @include r($phone) {
+        font-size: 204px;
+        margin-top: -60px;
+      }
+      @media (max-width: 410px) {
+        font-size: 196px;
+      }
+      @media (max-width: 390px) {
+        font-size: 186px;
+      }
+      @media (max-width: 370px) {
+        font-size: 180px;
       }
     }
   }
@@ -144,12 +239,39 @@
     @media (max-width: 1330px) {
       width: 590px;
     }
+    @media (max-width: 1240px) {
+      width: 530px;
+    }
+    @media (max-width: 1140px) {
+      width: 480px;
+    }
+    @media (max-width: 1070px) {
+      width: 430px;
+    }
     @media (max-height: 770px) {
       height: auto;
-      width: 590px;
+      width: 430px;
     }
-    @media (max-height: 730px) {
-      width: 540px;
+    @media (max-width: 830px) {
+      width: 390px;
+    }
+    @include r($tablet) {
+      width: 360px;
+    }
+    @media (max-width: 660px) {
+      width: 325px;
+    }
+    @include r($sm) {
+      width: 310px;
+    }
+    @include r($phone) {
+      width: 280px;
+    }
+    @media (max-width: 410px) {
+      width: 265px;
+    }
+    @media (max-width: 390px) {
+      width: 255px;
     }
   }
 
@@ -176,6 +298,15 @@
     @media (max-height: 790px) {
       margin-bottom: 45px;
     }
+    @media (max-width: 1330px) {
+      margin-top: -10px;
+    }
+    @include r($lg) {
+      margin-bottom: 80px;
+    }
+    @include r($tablet) {
+      margin-bottom: 70px;
+    }
 
     &-title {
       text-transform: uppercase;
@@ -188,8 +319,28 @@
       @media (max-height: 780px) {
         margin-bottom: 10px;
       }
-      @media (max-width: 1420px) {
-        font-size: 140px;
+      @include r($desktop) {
+        margin-bottom: 0;
+      }
+      @include r($lg) {
+        margin-bottom: -8px;
+        font-size: 130px;
+      }
+      @include r($tablet) {
+        font-size: 120px;
+      }
+      @media (max-width: 650px) {
+        font-size: 108px;
+        margin-bottom: -2px;
+      }
+      @include r($sm) {
+        font-size: 100px;
+      }
+      @media (max-width: 510px) {
+        font-size: 90px;
+      }
+      @include r($phone) {
+        font-size: 86px;
       }
     }
 
@@ -200,6 +351,23 @@
       z-index: 20;
       @media (max-width: 1400px) {
         gap: 140px;
+      }
+      @include r($desktop) {
+        gap: 110px;
+      }
+      @include r($lg) {
+        gap: 80px;
+      }
+      @media (max-width: 900px) {
+        gap: 65px;
+      }
+      @media (max-width: 840px) {
+        gap: 55px;
+      }
+      @media (max-width: 650px) {
+        align-items: center;
+        flex-direction: column;
+        gap: 25px;
       }
     }
 
@@ -217,6 +385,12 @@
       }
       @media (max-width: 1300px) {
         font-size: 24px;
+      }
+      @media (max-width: 830px) {
+        font-size: 22px;
+      }
+      @media (max-width: 700px) {
+        font-size: 20px;
       }
 
       span {
@@ -252,9 +426,6 @@
     font-weight: 100;
     @media (max-height: 890px) {
       margin-bottom: 20px;
-    }
-    @media (max-width: 830px) {
-      margin-bottom: 10px;
     }
 
     span {
