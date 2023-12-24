@@ -11,6 +11,7 @@
   background: rgba(21, 21, 21, .80);
   backdrop-filter: blur(39px);
   overflow-y: scroll;
+  overflow-x: hidden;
   @media (max-height: 890px) {
     padding-top: 0;
     display: flex;
@@ -31,6 +32,12 @@
   }
   @media (max-height: 688px) {
     padding-top: 40px;
+  }
+  @include r($sm) {
+    padding-top: 40px;
+  }
+  @include r($phone) {
+    padding-top: 35px;
   }
 
   &--active {
@@ -71,6 +78,10 @@
     @media (max-width: 880px) {
       max-width: max-content;
       margin: 0 auto;
+    }
+    @include r($phone) {
+      max-width: 360px;
+      width: 100%;
     }
   }
 
@@ -127,6 +138,13 @@
       width: 160px;
       top: -60px;
     }
+    @media (max-width: 360px) {
+      width: 155px;
+    }
+    @media (max-width: 344px) {
+      width: 146px;
+      top: -55px;
+    }
   }
 
   &__title {
@@ -176,6 +194,12 @@
     @media (max-width: 370px) {
       font-size: 115px;
     }
+    @media (max-width: 360px) {
+      font-size: 108px;
+    }
+    @media (max-width: 344px) {
+      font-size: 102px;
+    }
   }
 
   &__form {
@@ -192,7 +216,7 @@
     }
     @include r($phone) {
       margin-bottom: 30px;
-      max-width: 333px;
+      max-width: 360px;
     }
     @media (max-width: 430px) {
       margin-bottom: 25px;
@@ -210,6 +234,7 @@
     }
     @media (max-width: 880px) {
       max-width: 360px;
+      width: 100%;
       margin: 0 auto 70px;
     }
     @include r($tablet) {
@@ -392,7 +417,7 @@
   }
 
   &__error {
-    display: block;
+    display: none;
     color: $accent;
     text-align: center;
     font-family: $condens;
@@ -409,18 +434,22 @@
   }
 
   &__error-info {
+    display: none;
+    position: relative;
     margin-top: 40px;
     background-color: $accent;
     font-size: 21px;
     line-height: 1.1;
-    color: #000;
     text-align: center;
     padding: 9px 40px;
     @media (max-height: 720px) {
-      font-size: 20px;
+      font-size: 19px;
+    }
+    @media (max-width: 880px) {
+      font-size: 19px;
     }
     @include r($tablet) {
-      font-size: 20px;
+      font-size: 19px;
       padding: 9px 30px;
     }
     @include r($sm) {
@@ -435,6 +464,7 @@
       font-size: 16px;
       padding: 8px 15px;
       max-width: 350px;
+      margin: 45px auto 0;
     }
     @media (max-width: 430px) {
       font-size: 15px;
@@ -444,13 +474,50 @@
       transition: color .4s, opacity .4s;
 
       &:hover {
-        color: $white;
+        color: #212121;
       }
 
       &:active {
         opacity: .6;
-        color: $white;
+        color: #212121;
       }
+    }
+  }
+
+  &__error-arrow {
+    transform: scaleX(1) rotate(140deg);
+    @include bg;
+    position: absolute;
+    right: -150px;
+    top: -125px;
+    @include r($desktop) {
+      right: -125px;
+      width: 130px;
+      height: auto;
+      transform: scaleX(1) rotate(150deg);
+    }
+    @media (max-width: 1150px) {
+      right: -25px;
+      top: -120px;
+      width: 93px;
+    }
+    @media (max-width: 880px) {
+      width: 120px;
+      top: -160px;
+      right: -95px;
+    }
+    @media (max-width: 680px) {
+      width: 106px;
+      right: -85px;
+      top: -140px;
+    }
+    @media (max-width: 660px) {
+      right: -40px;
+    }
+    @media (max-width: 490px) {
+      right: -28px;
+      top: -102px;
+      width: 80px;
     }
   }
 }

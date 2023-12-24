@@ -195,3 +195,13 @@ document.addEventListener('DOMContentLoaded', function () {
     modalCloseCompleteIcon.addEventListener('click', closeModal);
     modalCloseComplete.addEventListener('click', closeModal);
 });
+
+document.getElementById('buttonError').addEventListener('click', function () {
+    document.querySelector('.modal__error-info').style.display = 'block';
+    document.querySelector('.modal__error').style.display = 'block';
+
+    setTimeout(function () {
+        document.querySelector('.modal__error-info').style.display = 'none';
+        document.querySelector('.modal__error').style.display = 'none';
+    }, 5000);
+});
