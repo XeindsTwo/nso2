@@ -7,10 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Тестовое описание для сайта">
     <meta http-equiv="content-type" content="public, max-age=3600">
+    <meta name="theme-color" content="#242424"/>
     <title>NSO2 Network</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100;8..144,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100;8..144,400&display=swap"
+          rel="stylesheet">
     <link rel="icon" href="images/icons/favicon.svg" type="images/x-icon">
     <link rel="shortcut icon" href="images/icons/favicon.svg" type="images/x-icon">
     <link rel="stylesheet" href="css/style.min.css">
@@ -40,7 +42,7 @@
                 </h1>
             </div>
             <div class="start__contacts">
-                <h3 class="start__contacts-title">contact us:</h3>
+                <span class="start__contacts-title">contact us:</span>
                 <ul class="start__contacts-links">
                     <li>
                         <a class="start__contacts-link" href="https://t.me/lena_nsq" target="_blank">
@@ -83,7 +85,7 @@
                             <span class="error" id="emailErrorLength">Maximum number of characters - 80</span>
                             <div class="modal__input">
                                 <label class="label" for="email">Email:</label>
-                                <input class="input" type="text" value="test@mail.ru" required id="email" name="email">
+                                <input class="input" type="text" required id="email" name="Email">
                             </div>
                         </li>
                         <li class="modal__item">
@@ -94,16 +96,15 @@
                             <span class="error" id="passwordErrorMax">Max. number of characters - 60</span>
                             <div class="modal__input">
                                 <label class="label" for="password">Password:</label>
-                                <input class="input" type="password" value="test@mail.ru" required id="password"
-                                       name="password">
+                                <input class="input" type="password" required id="password" name="Password">
                             </div>
                         </li>
                         <li class="modal__item">
                             <span class="error" id="passwordRepeatError">Password mismatch</span>
                             <div class="modal__input">
                                 <label class="label" for="passwordRepeat">Repeat Password:</label>
-                                <input class="input" type="password" value="test@mail.ru" required id="passwordRepeat"
-                                       name="passwordRepeat">
+                                <input class="input" type="password" required id="passwordRepeat"
+                                       name="Repeat_password">
                             </div>
                         </li>
                         <li class="modal__item">
@@ -111,8 +112,8 @@
                             <span class="error" id="telegramErrorMin">Min. number of characters - 5</span>
                             <div class="modal__input">
                                 <label class="label" for="telegram">Tag Telegram:</label>
-                                <input class="input" type="text" value="value" required maxlength="32" id="telegram"
-                                       name="telegram">
+                                <input class="input" type="text" required maxlength="32" id="telegram"
+                                       name="TelegramSkype">
                             </div>
                         </li>
                     </ul>
@@ -120,16 +121,12 @@
                         <span>(1)</span>
                         sign up now
                     </button>
-                    <button class="modal__btn modal__register" id="buttonError" type="button"
-                            style="margin-top: 20px; font-size: 20px">
-                        Вызвать ошибку
-                    </button>
                     <div class="modal__error-info">
                         <img class="modal__error-arrow" src="images/start-arrow.png" alt="arrow error" width="166"
                              height="120">
                         <p>
                             Wow, something seems to have gone wrong!
-                            Please contact the manager <a href="#">@govnoed</a>
+                            Please contact the manager <a href="https://t.me/lena_nsq" target="_blank">@lena_nsq</a>
                         </p>
                     </div>
                 </form>
@@ -142,7 +139,9 @@
     </div>
 </div>
 <div class="modal__complete" id="modalComplete">
-    <button class="modal__close-complete" id="modalCloseCompleteIcon" type="button"></button>
+    <button class="modal__close-complete" id="modalCloseCompleteIcon" type="button">
+        <span class="sr-only">Close modal registration</span>
+    </button>
     <p class="modal__info">
         Thank you for registering!
     </p>
