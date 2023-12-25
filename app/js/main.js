@@ -57,6 +57,10 @@ document.addEventListener('DOMContentLoaded', function () {
     let passwordHasBeenBlurred = false;
     let telegramValid = false;
     let telegramHasBeenBlurred = false;
+    const modalCloseCompleteIcon = document.getElementById('modalCloseCompleteIcon');
+    const modalCloseComplete = document.getElementById('modalCloseComplete');
+    const modalComplete = document.querySelector('.modal__complete');
+    const modal = document.querySelector('.modal');
 
     const validateEmail = () => {
         const emailValue = emailInput.value.trim();
@@ -144,6 +148,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const closeModal = () => {
         const body = document.body;
+        const modalRegistration = document.querySelector('.modal');
         const modal = document.getElementById('modalComplete');
         body.classList.remove('body--complete');
         modal.classList.remove('modal__complete--active');
@@ -152,6 +157,11 @@ document.addEventListener('DOMContentLoaded', function () {
         modal.style.opacity = '0';
         modal.style.transition = 'all .8s ease-in-out';
         modal.style.pointerEvents = 'none';
+
+        setTimeout(() => {
+            body.classList.remove('body--active');
+            modalRegistration.classList.remove('modal--active');
+        }, 600);
 
         setTimeout(() => {
             modal.style.opacity = '';
@@ -188,9 +198,6 @@ document.addEventListener('DOMContentLoaded', function () {
             showModalComplete();
         }
     });
-
-    const modalCloseCompleteIcon = document.getElementById('modalCloseCompleteIcon');
-    const modalCloseComplete = document.getElementById('modalCloseComplete');
 
     modalCloseCompleteIcon.addEventListener('click', closeModal);
     modalCloseComplete.addEventListener('click', closeModal);

@@ -12,7 +12,7 @@
   backdrop-filter: blur(39px);
   overflow-y: scroll;
   overflow-x: hidden;
-  @media (max-height: 890px) {
+  @media (max-height: 940px) {
     padding-top: 0;
     display: flex;
     flex-direction: column;
@@ -21,14 +21,16 @@
   }
   @media (max-height: 750px) {
     height: 100%;
-    padding-top: 50px;
+    padding-top: 40px;
     padding-bottom: 30px;
     justify-content: flex-start;
+  }
+  @include r($lg) {
+    padding-top: 30px;
   }
   @media (max-width: 880px) {
     justify-content: flex-start;
     height: 100%;
-    padding-top: 50px;
   }
   @media (max-height: 688px) {
     padding-top: 40px;
@@ -37,7 +39,7 @@
     padding-top: 40px;
   }
   @include r($phone) {
-    padding-top: 35px;
+    padding-top: 25px;
   }
 
   &--active {
@@ -138,11 +140,7 @@
       width: 160px;
       top: -60px;
     }
-    @media (max-width: 360px) {
-      width: 155px;
-    }
     @media (max-width: 344px) {
-      width: 146px;
       top: -55px;
     }
   }
@@ -370,16 +368,29 @@
     position: fixed;
     top: 50%;
     left: 50%;
-    max-width: 490px;
+    max-width: 370px;
     width: 100%;
     background-color: #212121;
-    padding: 45px 30px 25px;
-    border-radius: 12px;
+    padding: 45px 30px 30px;
+    border-radius: 8px;
     box-shadow: 0 25px 50px -15px rgba(51, 51, 51, .4);
     transform: translate(-50%, 20%);
     opacity: 0;
     pointer-events: none;
     transition: all .7s ease-in-out;
+    @media (max-width: 880px) {
+      max-width: 330px;
+    }
+    @include r($phone) {
+      max-width: 320px;
+      padding: 45px 25px 25px;
+    }
+    @media (max-width: 360px) {
+      max-width: 300px;
+    }
+    @media (max-width: 330px) {
+      max-width: 290px;
+    }
 
     &--active {
       transform: translate(-50%, -50%);
@@ -393,17 +404,23 @@
     font-size: 20px;
     line-height: 1.4;
     margin-bottom: 20px;
+    text-align: center;
+    @include r($phone) {
+      font-size: 18px;
+    }
   }
 
   &__btn-close {
+    display: block;
     background-color: $accent;
     border: 1px solid transparent;
     border-radius: 50px;
     color: $white;
     line-height: 1;
     font-size: 16px;
-    padding: 14px 30px;
+    padding: 14px 50px;
     transition: color .4s, background-color .4s;
+    margin: 0 auto;
 
     &:hover {
       background-color: transparent;
@@ -445,6 +462,9 @@
     @media (max-height: 720px) {
       font-size: 19px;
     }
+    @include r($lg) {
+      padding: 9px 30px;
+    }
     @media (max-width: 880px) {
       font-size: 19px;
     }
@@ -468,6 +488,7 @@
     }
     @media (max-width: 430px) {
       font-size: 15px;
+      padding: 8px 10px;
     }
 
     a {

@@ -119,6 +119,7 @@
       margin-bottom: 20px;
     }
     @include r($phone) {
+      margin-bottom: 15px;
       font-size: 56px;
     }
   }
@@ -241,8 +242,7 @@
       @include r($phone) {
         font-size: 210px;
         margin-top: -90px;
-/*        -webkit-text-stroke-width: 0.7px;*/
-        -webkit-text-stroke-width: 2px;
+        -webkit-text-stroke-width: 0.7px;
       }
       @media (max-width: 440px) {
         font-size: 204px;
