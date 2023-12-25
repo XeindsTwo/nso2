@@ -1,7 +1,13 @@
 .start {
   margin-top: 50px;
-  @media screen and (max-width: 1350px) and (max-height: 770px) {
-    margin-top: 35px;
+  @media (max-width: 1300px) {
+    margin-top: 40px;
+  }
+  @include r($lg) {
+    margin-top: 30px;
+  }
+  @include r($phone) {
+    margin-top: 25px;
   }
 
   &__nav {
@@ -28,6 +34,9 @@
     color: inherit;
     display: flex;
     font-size: 22px;
+    @include r($tablet) {
+      padding-bottom: 0;
+    }
 
     &:focus {
       opacity: .5;
@@ -55,6 +64,9 @@
       height: 1px;
       background-color: $accent;
       transition: width .4s;
+      @include r($tablet) {
+        display: none;
+      }
     }
   }
 
@@ -65,7 +77,7 @@
       margin-top: 100px;
     }
     @media (max-width: 650px) {
-      margin-top: 80px;
+      margin-top: 70px;
     }
   }
 
@@ -91,6 +103,7 @@
     @include r($phone) {
       margin-bottom: 2px;
       font-size: 18px;
+      font-weight: 100;
     }
   }
 
@@ -103,7 +116,7 @@
       font-size: 60px;
     }
     @include r($sm) {
-      margin-bottom: 35px;
+      margin-bottom: 20px;
     }
     @include r($phone) {
       font-size: 56px;
@@ -159,7 +172,10 @@
     @include r($lg) {
       flex-direction: column;
       align-items: center;
-      margin-bottom: 25px;
+      margin-bottom: 20px;
+    }
+    @include r($phone) {
+      margin-bottom: 16px;
     }
 
     span {
@@ -200,37 +216,45 @@
         margin-top: -100px;
       }
       @media (max-width: 830px) {
-        margin-top: -90px;
-        font-size: 245px;
+        margin-top: -150px;
+        font-size: 324px;
       }
       @include r($tablet) {
-        margin-top: -80px;
-        font-size: 230px;
-        -webkit-text-stroke-width: 1px;
+        font-size: 300px;
+        -webkit-text-stroke-width: 3px;
       }
-      @media (max-width: 650px) {
-        font-size: 220px;
+      @media (max-width: 700px) {
+        font-size: 274px;
+        margin-top: -140px;
+      }
+      @media (max-width: 660px) {
+        font-size: 258px;
+        margin-top: -120px;
       }
       @include r($sm) {
-        margin-top: -70px;
-        font-size: 210px;
+        margin-top: -110px;
+        font-size: 240px;
+      }
+      @media (max-width: 530px) {
+        font-size: 226px;
       }
       @include r($phone) {
+        font-size: 210px;
+        margin-top: -90px;
+/*        -webkit-text-stroke-width: 0.7px;*/
+        -webkit-text-stroke-width: 2px;
+      }
+      @media (max-width: 440px) {
         font-size: 204px;
-        margin-top: -60px;
-        -webkit-text-stroke-width: 0.7px;
       }
-      @media (max-width: 410px) {
-        font-size: 196px;
+      @media (max-width: 400px) {
+        font-size: 198px;
       }
-      @media (max-width: 390px) {
-        font-size: 186px;
-      }
-      @media (max-width: 370px) {
-        font-size: 180px;
+      @media (max-width: 380px) {
+        font-size: 182px;
       }
       @media (max-width: 360px) {
-        font-size: 170px;
+        font-size: 176px;
       }
     }
   }
@@ -261,28 +285,31 @@
       width: 430px;
     }
     @media (max-width: 830px) {
-      width: 390px;
+      width: 630px;
     }
     @include r($tablet) {
-      width: 360px;
+      width: 530px;
+    }
+    @media (max-width: 700px) {
+      width: 510px;
     }
     @media (max-width: 660px) {
-      width: 325px;
+      width: 470px;
     }
     @include r($sm) {
-      width: 310px;
+      width: 450px;
+    }
+    @media (max-width: 530px) {
+      width: 420px;
     }
     @include r($phone) {
-      width: 280px;
+      width: 400px;
     }
-    @media (max-width: 410px) {
-      width: 265px;
+    @media (max-width: 440px) {
+      width: 385px;
     }
-    @media (max-width: 390px) {
-      width: 255px;
-    }
-    @media (max-width: 360px) {
-      width: 235px;
+    @media (max-width: 400px) {
+      width: 350px;
     }
   }
 
@@ -317,6 +344,9 @@
     }
     @include r($tablet) {
       margin-bottom: 70px;
+    }
+    @include r($phone) {
+      margin-bottom: 95px;
     }
 
     &-title {
@@ -379,7 +409,7 @@
       @media (max-width: 650px) {
         align-items: center;
         flex-direction: column;
-        gap: 25px;
+        gap: 22px;
       }
     }
 
@@ -436,8 +466,11 @@
     line-height: 1.32;
     font-size: 12px;
     font-weight: 100;
+    @include r($lg) {
+      margin-bottom: 25px;
+    }
     @media (max-height: 890px) {
-      margin-bottom: 20px;
+      margin-bottom: 25px;
     }
 
     span {
